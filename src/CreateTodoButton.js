@@ -1,8 +1,15 @@
 import React from "react";
 
 function CreateTodoButton() {
+
+  const onClickButton = (msg) => {
+    alert(msg)
+  }
   return (
-    <button>+</button>
+    <button 
+      className="todo-button"
+      onClick={() => onClickButton('Modal en construcción')}
+    >+</button>
   )
 }
 

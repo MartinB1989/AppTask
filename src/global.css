@@ -1,0 +1,83 @@
+body {
+  height: 100vh;
+  background: radial-gradient(circle at 50% -20.71%, #ffdcf4 0, #ffd3f3 12.5%, #ffc9f2 25%, #ffbff2 37.5%, #f2b5f2 50%, #e2acf3 62.5%, #d0a4f4 75%, #bc9ff6 87.5%, #a69bf8 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.todo-counter {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.todo-search-container {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+}
+.todo-search {
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  width: 50%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+.todo-search:focus {
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  transform: scale(1.01);
+  transition: 1s transform, 1s box-shadow;
+}
+.todo-list {
+  width: 100%;
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+}
+.todo-list ul {
+  list-style: none;
+  padding: 0;
+}
+.todo-list ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  max-width: 400px;
+  background-color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.todo-list ul li .todo-item--text, .todo-list ul li .todo-item--check, .todo-list ul li .todo-item--delete {
+  padding: 0 1rem;
+} 
+.todo-list ul li .todo-item--checked {
+  color: green;
+}
+.todo-button {
+  outline: none;
+  border: none;
+  background-color: #6a58f2;
+  width: 100px;
+  padding: 0.1rem 0.5rem;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.todo-list ul li .todo-item--completed {
+  text-decoration:line-through;
+  color: green;
+}
+.todo-list ul li .todo-item--delete:hover {
+  color: red;
+  cursor: pointer;
+}
