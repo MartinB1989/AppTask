@@ -1,16 +1,18 @@
 body {
   height: 100vh;
-  background: radial-gradient(circle at 50% -20.71%, #ffdcf4 0, #ffd3f3 12.5%, #ffc9f2 25%, #ffbff2 37.5%, #f2b5f2 50%, #e2acf3 62.5%, #d0a4f4 75%, #bc9ff6 87.5%, #a69bf8 100%);
+/*   background: radial-gradient(circle at 50% -20.71%, #ffdcf4 0, #ffd3f3 12.5%, #ffc9f2 25%, #ffbff2 37.5%, #f2b5f2 50%, #e2acf3 62.5%, #d0a4f4 75%, #bc9ff6 87.5%, #a69bf8 100%);*/  
+  background-color: #121f3d;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .todo-counter {
+  color: #33b1ff;
   text-align: center;
   font-size: 2rem;
-  font-weight: 400;
-  text-transform: uppercase;
+  font-weight: 700;
+
 }
 .todo-search-container {
   display: flex;
@@ -19,19 +21,18 @@ body {
   margin: auto;
 }
 .todo-search {
-  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-  width: 50%;
-  padding: 0.5rem;
-  border: none;
+  background-color: #03091e;
+  border: 1px solid #40587c;
+  width: 350px;
+  padding: 0.5rem 1rem;
+  color: #eff3f8;
+  font-size: .875rem;
   border-radius: 8px;
   outline: none;
-  font-size: 1.2rem;
   letter-spacing: 0.5px;
 }
-.todo-search:focus {
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  transform: scale(1.01);
-  transition: 1s transform, 1s box-shadow;
+.todo-search::placeholder{
+  color: #243e7b;
 }
 .todo-list {
   width: 100%;
@@ -67,7 +68,7 @@ body {
 .todo-button {
   outline: none;
   border: none;
-  background-color: #6a58f2;
+  background-color: #98ca3f;
   width: 100px;
   padding: 0.1rem 0.5rem;
   border-radius: 8px;
