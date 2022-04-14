@@ -61,6 +61,9 @@ body {
 .todo-list ul li .todo-item--checked {
   color: green;
 }
+.todo-list ul li .todo-item--check{
+  cursor: pointer;
+}
 .todo-button {
   outline: none;
   border: none;

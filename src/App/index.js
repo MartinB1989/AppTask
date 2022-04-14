@@ -1,10 +1,10 @@
 import React from 'react';
-import { TodoCounter } from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton'
-import './global.css'
+import { TodoCounter } from '../TodoCounter';
+import { TodoSearch } from '../TodoSearch';
+import { TodoList } from '../TodoList';
+import { TodoItem } from '../TodoItem';
+import { CreateTodoButton } from '../CreateTodoButton'
+import '../global.css'
 /* import logo from './logo.svg';
 import './App.css'; */
 
@@ -34,6 +34,21 @@ function App() {
     })
   }
 
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text == text)
+    const newTodos = [...todos]
+    
+    newTodos[todoIndex].completed = true
+    setTodos(newTodos)
+  }
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text == text)
+    const newTodos = [...todos]
+    
+    newTodos.splice(todoIndex, 1)
+    setTodos(newTodos)
+  }
+
   return (
     <React.Fragment>
       <TodoCounter
@@ -46,7 +61,13 @@ function App() {
       />
       <TodoList>
         {searchedTodos.map( todo => (
-          <TodoItem key={todo.text} text={todo.text} completed={todo.completed}/>
+          <TodoItem 
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}  
+          />
         ))}
       </TodoList>
       <CreateTodoButton/>  
