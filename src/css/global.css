@@ -66,12 +66,17 @@ body {
   cursor: pointer;
 }
 .todo-button {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9;
   outline: none;
   border: none;
   background-color: #98ca3f;
-  width: 100px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   padding: 0.1rem 0.5rem;
-  border-radius: 8px;
   display: block;
   margin: auto;
   font-size: 1.6rem;

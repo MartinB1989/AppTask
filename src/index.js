@@ -1,4 +1,4 @@
-/* 
+/*
 React 17
 
 import React from 'react';
@@ -19,7 +19,7 @@ import App from './App';
 
 const container = document.getElementById('root');
 const root = ReactDOMClient.createRoot(container);
-
-root.render(
+/* const modal = ReactDOM.createPortal(child, container)
+ */root.render(
   <App />
 );

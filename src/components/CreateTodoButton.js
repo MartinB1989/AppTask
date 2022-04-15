@@ -1,14 +1,14 @@
 import React from "react";
 
-function CreateTodoButton() {
+function CreateTodoButton(props) {
 
-  const onClickButton = (msg) => {
-    alert(msg)
+  const onClickButton = () => {
+    props.setOpenModal(prevState => !prevState)
   }
   return (
     <button 
       className="todo-button"
-      onClick={() => onClickButton('Modal en construcción')}
+      onClick={onClickButton}
     >+</button>
   )
 }
