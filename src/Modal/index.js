@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import '../css/modal.css';
+import '../css/overlay.css';
 
 
 function Modal({children}) {
   return ReactDOM.createPortal(
-    <div className="modal-overlay">
+    <div className="overlay">
       {children}
     </div>,
     document.getElementById('modal')

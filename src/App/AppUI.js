@@ -6,8 +6,10 @@ import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodoButton'
 import { TodoContext } from "../TodoContext";
 import { Modal } from "../Modal";
-import '../css/global.css'
 import { TodoForm } from "../components/TodoForm";
+import { Loading } from "../components/Loading";
+import { Spinner } from "../components/Spinner";
+import '../css/global.css'
 
 function AppUI() {
 
@@ -29,11 +31,11 @@ function AppUI() {
         <TodoList>
           {error && <p>Ha ocurrido un error</p>}
           {loading && <p>Estamos cargando</p>}
-          {(!loading && !searchedTodos.length) && <p>Crea tu primer Todo</p>}
+          {(!loading && !searchedTodos.length) && <p className="first-tarea-text">¡Crea tu primer tarea!</p>}
 
-          {searchedTodos.map( todo => (
+          {searchedTodos.map( (todo,index) => (
             <TodoItem
-              key={todo.text}
+              key={index}
               text={todo.text}
               completed={todo.completed}
               onComplete={() => completeTodo(todo.text)}
@@ -46,7 +48,11 @@ function AppUI() {
             <TodoForm></TodoForm>
           </Modal>
         )}
-
+        {loading && (
+          <Loading>
+            <Spinner/>
+          </Loading>
+        )}
       <CreateTodoButton
         setOpenModal={setOpenModal}
       />

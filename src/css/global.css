@@ -1,7 +1,12 @@
+:root {
+  --green:#98ca3f ;
+  --blue:#121f3d;
+  --light-blue:#33b1ff;
+}
 body {
   height: 100vh;
 /*   background: radial-gradient(circle at 50% -20.71%, #ffdcf4 0, #ffd3f3 12.5%, #ffc9f2 25%, #ffbff2 37.5%, #f2b5f2 50%, #e2acf3 62.5%, #d0a4f4 75%, #bc9ff6 87.5%, #a69bf8 100%);*/  
-  background-color: #121f3d;
+  background-color:var(--blue);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Roboto', sans-serif;
@@ -14,13 +19,13 @@ body {
   font-weight: 700;
 
 }
-.todo-search-container {
+.todo-search-container{
   display: flex;
   justify-content: center;
   width: 50%;
   margin: auto;
 }
-.todo-search {
+.todo-search, .todo-form--main textarea {
   background-color: #03091e;
   border: 1px solid #40587c;
   width: 350px;
@@ -59,9 +64,7 @@ body {
 .todo-list ul li .todo-item--text, .todo-list ul li .todo-item--check, .todo-list ul li .todo-item--delete {
   padding: 0 1rem;
 } 
-.todo-list ul li .todo-item--checked {
-  color: green;
-}
+
 .todo-list ul li .todo-item--check{
   cursor: pointer;
 }
@@ -72,7 +75,7 @@ body {
   z-index: 9;
   outline: none;
   border: none;
-  background-color: #98ca3f;
+  background-color: var(--green);
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -84,9 +87,65 @@ body {
 }
 .todo-list ul li .todo-item--completed {
   text-decoration:line-through;
-  color: green;
+  color: var(--green);
 }
 .todo-list ul li .todo-item--delete:hover {
   color: red;
   cursor: pointer;
+}
+.todo-list ul li .todo-item--checked {
+  color: var(--green);
+}
+.first-tarea-text {
+  color: var(--green);
+  font-size: 1.6rem;
+}
+.todo-form--main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: var(--blue);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.todo-form--main label {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.todo-form--main textarea {
+  margin: 1rem 0;
+  outline: none;
+  width: 200px;
+  resize: none;
+  font-family: 'Roboto', sans-serif;
+
+}
+.todo-form--main .todo-form--buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.todo-form--main .todo-form--buttons .add-btn, .todo-form--main .todo-form--buttons .cancel-btn{
+  background-color: var(--green);
+  width: 48%;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: var(--blue);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+
+}
+.todo-form--main .todo-form--buttons .cancel-btn {
+  background-color: white;
+}
+.todo-form--main .todo-form--buttons .add-btn:hover, .todo-form--main .todo-form--buttons .cancel-btn:hover {
+  font-weight: 700;
+}
+.todo-form--main .is-empty-error {
+  color: red;
 }
