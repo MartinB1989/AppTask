@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AppTask/static/css/main.b8cc6948.css",
+    "main.js": "/AppTask/static/js/main.28ced46b.js",
+    "index.html": "/AppTask/index.html",
+    "main.b8cc6948.css.map": "/AppTask/static/css/main.b8cc6948.css.map",
+    "main.28ced46b.js.map": "/AppTask/static/js/main.28ced46b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8cc6948.css",
+    "static/js/main.28ced46b.js"
+  ]
+}
