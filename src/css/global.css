@@ -63,7 +63,11 @@ body {
 
 .todo-list ul li .todo-item--text, .todo-list ul li .todo-item--check, .todo-list ul li .todo-item--delete {
   padding: 0 1rem;
-} 
+}
+.todo-list ul li .todo-item--text {
+  
+  width: 250px;
+}
 
 .todo-list ul li .todo-item--check{
   cursor: pointer;
