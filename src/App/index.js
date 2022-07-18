@@ -8,8 +8,9 @@ import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodoButton'
 import { Modal } from "../Modal";
 import { TodoForm } from "../components/TodoForm";
-import { Loading } from "../components/Loading";
-import { Spinner } from "../components/Spinner";
+import { EmptyTodos } from '../components/EmptyTodos';
+import { TodoError } from '../components/TodoError';
+import { Loader } from "../components/Loader";
 import '../css/global.css'
 
 
@@ -42,20 +43,40 @@ function App() {
         />
       </TodoHeader>
 
-      <TodoList>
-        {error && <p>Ha ocurrido un error</p>}
-        {loading && <p>Estamos cargando</p>}
-        {(!loading && !searchedTodos.length) && <p className="first-tarea-text">¡Crea tu primer tarea!</p>}
 
-        {searchedTodos.map( (todo,index) => (
+      <TodoList
+        error={error}
+        loading={loading}
+        searchedTodos={searchedTodos}
+        totalTodos={totalTodos}
+        searchText={searchValue}
+        onError={() => <TodoError/>}
+        onLoading={() => <Loader/>}
+        onEmptyTodos={() => <EmptyTodos/>}
+        noFound={
+          (searchText) => <p className="first-tarea-text">No hay resultados para {searchText}</p>
+        }
+        render={todo => (
           <TodoItem
-            key={index}
+            key={todo.text}
             text={todo.text}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />
-        ))}
+        )}
+      >
+        {/* {
+          todo => (
+            <TodoItem
+              key={todo.text}
+              text={todo.text}
+              completed={todo.completed}
+              onComplete={() => completeTodo(todo.text)}
+              onDelete={() => deleteTodo(todo.text)}
+            />
+          )
+        } */}
       </TodoList>
       {openModal && (
         <Modal>
@@ -64,11 +85,6 @@ function App() {
             setOpenModal={setOpenModal}
           ></TodoForm>
         </Modal>
-      )}
-      {loading && (
-        <Loading>
-          <Spinner/>
-        </Loading>
       )}
       <CreateTodoButton
         setOpenModal={setOpenModal}
